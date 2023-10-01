@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Coin from "./Coin";
+import { coinFlip } from "./Helpers";
 
 class CoinFlipper extends Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class CoinFlipper extends Component {
     }
     flipCoin() {
         // Update counter + set last.
-        const last = Math.round(Math.random()) ? "heads" : "tails";
+        const last = coinFlip();
         this.setState({ [last]: this.incrementCounter(last) });
     }
     // Generate random boolean value and assign to last flipped.
