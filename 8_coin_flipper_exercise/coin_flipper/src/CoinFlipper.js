@@ -23,6 +23,12 @@ class CoinFlipper extends Component {
         );
     }
     flipCoin() {
+        // =============================================================================
+        // NOTE: This would all be better if the coin data existed in an object, and was
+        // updated by creating a brand new object then calling setState with it.
+        // Video using spread to unpack: 
+        // https://www.udemy.com/course/modern-react-bootcamp/learn/lecture/14375640#content
+        // =============================================================================
         // Update counter + set last.
         const last = coinFlip();
         this.setState({ [last]: this.incrementCounter(last) });
