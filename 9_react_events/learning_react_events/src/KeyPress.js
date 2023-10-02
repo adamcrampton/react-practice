@@ -8,12 +8,13 @@ class KeyPress extends Component {
     render() {
         return (
             <div>
+                <h1>Input Changing</h1>
                 {/* Binding inline - not ideal */}
                 <input placeholder="Add text" onKeyUp={ this.handleKeyPressInline.bind(this) }></input>
                 {/* Binding using constructor */}
                 <input placeholder="Add text" onKeyUp={ this.handleKeyPressFromConstructor }></input>
                 {/* Binding using arrow function - not ideal */}
-                <input placeholder="Add text" onKeyUp={ () => this.handleKeyPressArrowFunction() }></input>
+                <input placeholder="Add text" onKeyUp={ (e) => this.handleKeyPressArrowFunction(e) }></input>
             </div>
         );
     }
@@ -30,7 +31,7 @@ class KeyPress extends Component {
             console.log('The asterisk key was pressed');
         }
     }
-    handleKeyPressArrowFunction() {
+    handleKeyPressArrowFunction(e) {
         console.log(`Key was pressed`);
     }
 }

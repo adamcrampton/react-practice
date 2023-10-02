@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
+import NumberList from "./NumberList";
 import KeyPress from './KeyPress';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
       {/* Event binding notes */}
-      <KeyPress />      
+      <KeyPress />
+      {/* Passing methods to child components notes */}
+      <NumberList />
     </div>
   );
 }
