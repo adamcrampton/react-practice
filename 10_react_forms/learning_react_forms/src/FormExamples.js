@@ -6,7 +6,7 @@ class FormExample extends Component {
         
         // Set default values for fields in state object.
         this.state = {
-            name: ''
+            name: ""
         }
 
         // Bind handlers.

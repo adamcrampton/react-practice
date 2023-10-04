@@ -6,9 +6,9 @@ class FormExampleMultiple extends Component {
 
         // Set default values for fields in state object.
         this.state = {
-            name: '',
-            email: '',
-            password: ''
+            name: "",
+            email: "",
+            password: ""
         }
 
         // Bind handlers.
