@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 
-class FormExample extends Component {
+class FormExampleMultiple extends Component {
     constructor(props) {
         super(props);
-        
+
         // Set default values for fields in state object.
         this.state = {
-            name: ''
+            name: '',
+            email: '',
+            password: ''
         }
 
         // Bind handlers.
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
+
     // Send to backend (or whatever need to be done with form data).
     handleSubmit(evt) {
         // Prevent form from HTML submitting and refreshing the page.
@@ -24,14 +27,15 @@ class FormExample extends Component {
     handleChange(evt) {
         // evt object contains value passed from form element.
         this.setState({
-            name: evt.target.value
+            // Use the field name attribute as a dynamic key.
+            [evt.target.name]: evt.target.value
         });
     }
 
     render() {
         return (
             <div>
-                <h1>Form Demo</h1>
+                <h1>Form Demo - Multiple Inputs</h1>
                 <form onSubmit={ this.handleSubmit }>
                     <div>
                         <label htmlFor="name">Username: </label>
@@ -43,6 +47,26 @@ class FormExample extends Component {
                             onChange={ this.handleChange }
                         />
                     </div>
+                    <div>
+                        <label htmlFor="email">Email: </label>
+                        <input 
+                            type="email"
+                            name="email"
+                            placeholder="Email address"
+                            value={ this.state.email }
+                            onChange={ this.handleChange }
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password: </label>
+                        <input 
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            value={ this.state.password }
+                            onChange={ this.handleChange }
+                        />
+                    </div>
                     <button onClick={ this.handleSubmit }>Submit</button>
                 </form>
             </div>
@@ -50,4 +74,4 @@ class FormExample extends Component {
     }
 }
 
-export default FormExample;
+export default FormExampleMultiple;
